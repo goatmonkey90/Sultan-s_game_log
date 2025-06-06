@@ -1,0 +1,29 @@
+name: 자동 리포트 커밋
+
+on:
+  workflow_dispatch:
+
+jobs:
+  commit-report:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: 저장소 체크아웃
+      uses: actions/checkout@v3
+
+    - name: Git 설정
+      run: |
+        git config --global user.name "sultan-bot"
+        git config --global user.email "sultan-bot@example.com"
+
+    - name: index.html 최신화 (예시용)
+      run: |
+        echo "<!-- 업데이트됨: $(date +'%Y-%m-%d %H:%M:%S') -->" >> index.html
+
+    - name: 변경 커밋 및 푸시
+      env:
+        GH_TOKEN: ${{ secrets.GH_TOKEN }}
+      run: |
+        git add index.html
+        git commit -m "자동 업데이트"
+        git push https://x-access-token:${GH_TOKEN}@github.com/${{ github.repository }}.git main

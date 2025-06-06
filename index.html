@@ -4,12 +4,33 @@
     <meta charset="UTF-8">
     <title>술탄의 게임 실시간 리포트</title>
     <style>
-        body { font-family: sans-serif; padding: 20px; }
-        h1, h2 { color: #333366; }
-        table { width: 100%; border-collapse: collapse; margin-bottom: 30px; }
-        th, td { border: 1px solid #888; padding: 8px; text-align: left; font-size: 14px; }
-        th { background-color: #e0e0ff; }
-        img { max-width: 100%; margin-top: 20px; }
+        body {
+            background-color: #121212;
+            color: #ffffff;
+            font-family: sans-serif;
+            padding: 20px;
+        }
+        h1, h2 {
+            color: #ffd700;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 30px;
+        }
+        th, td {
+            border: 1px solid #888;
+            padding: 8px;
+            text-align: left;
+            font-size: 14px;
+        }
+        th {
+            background-color: #333333;
+        }
+        .돌 { background-color: #4e342e; color: #ffffff; }
+        .브론즈 { background-color: #2e7d32; color: #ffffff; }
+        .실버 { background-color: #1565c0; color: #ffffff; }
+        .골드 { background-color: #ffd700; color: #000000; font-weight: bold; }
     </style>
 </head>
 <body>
@@ -18,59 +39,34 @@
 <h2>📆 일자별 캐릭터 행동 및 결과 요약</h2>
 <table>
     <tr><th>일자</th><th>캐릭터</th><th>행동</th><th>결과</th><th>이벤트</th></tr>
-    <tr><td rowspan="4">1일차</td><td colspan="4">초기 세팅 (전통 귀족, 두뇌, 보수, 노예 3명)</td></tr>
-    <tr><td>메기</td><td>권력 게임</td><td>중상모략 1장 획득</td><td>이벤트 없음</td></tr>
-    <tr><td>강또, 코누르</td><td>가족 사업</td><td>금화 +5</td><td>이벤트 없음</td></tr>
-    <tr><td>이나르</td><td>서점 영업</td><td>실패</td><td>이벤트 없음</td></tr>
+    <tr><td rowspan="4">1일차</td><td>초기 세팅</td><td>-</td><td>-</td><td>-</td></tr>
+    <tr><td colspan="4">기본 시작 상태</td></tr>
+    
+    <tr><td rowspan="4">2일차</td><td>메기</td><td>권력 게임</td><td>중상모략 1장 획득</td><td>이벤트 없음</td></tr>
+    <tr><td>강또</td><td>가족사업</td><td class="골드">금화 5 획득</td><td>이벤트 없음</td></tr>
+    <tr><td>코누르</td><td>가족사업</td><td>-</td><td>-</td></tr>
+    <tr><td>이나르</td><td>서점 영업</td><td>주사위 실패</td><td>이벤트 없음</td></tr>
 
-    <tr><td rowspan="5">2일차</td><td>메기</td><td>권력 게임</td><td>기회 카드 획득</td><td>이벤트 발생 (선명+1, 권세-1)</td></tr>
-    <tr><td>강또</td><td>목욕탕 정보 수집</td><td>내막(브론즈) 획득</td><td>이벤트 없음</td></tr>
-    <tr><td>코누르</td><td>가족 사업</td><td>금화 +2</td><td>이벤트 없음</td></tr>
+    <tr><td rowspan="5">3일차</td><td>메기</td><td>권력 게임</td><td>기획 카드 획득</td><td>이벤트 없음</td></tr>
+    <tr><td>강또</td><td>목욕탕 정보 수집</td><td class="브론즈">내막 카드(브론즈) 획득</td><td>이벤트 없음</td></tr>
+    <tr><td>코누르</td><td>가족사업</td><td class="골드">금화 2 획득</td><td>이벤트 없음</td></tr>
     <tr><td>이나르</td><td>서점 영업</td><td>실패</td><td>이벤트 없음</td></tr>
     <tr><td>볼란</td><td>휴식</td><td>-</td><td>-</td></tr>
 
-    <tr><td rowspan="6">3일차</td><td>강또</td><td>흉폭한 사자의 습격</td><td>부상, 협명 +1</td><td>이벤트 없음</td></tr>
-    <tr><td>볼란</td><td>보조(사자 습격)</td><td>부상</td><td>이벤트 없음</td></tr>
-    <tr><td>메기</td><td>권력 게임</td><td>권세 +1</td><td>화재 이벤트 (금화+5, 선명-1, 악명+1)</td></tr>
-    <tr><td>코누르</td><td>가족 사업</td><td>금화 +1</td><td>이벤트 없음</td></tr>
-    <tr><td>이나르</td><td>서점 영업</td><td>약자가 강자를 이기는 법 획득</td><td>이벤트 없음</td></tr>
-    <tr><td>아사르</td><td>서점 영업</td><td>예조(돌) 획득</td><td>이벤트 없음</td></tr>
-</table>
+    <tr><td rowspan="7">4일차</td><td>강또</td><td>사자 습격</td><td>부상, 협명 +1</td><td>대형 이벤트</td></tr>
+    <tr><td>볼란</td><td>보조 전투</td><td>부상</td><td>동일 이벤트</td></tr>
+    <tr><td>메기</td><td>권력 게임</td><td>권세 +1</td><td>화재 이벤트: 도둑질 선택, 금화+5, 선명-1, 악명+1</td></tr>
+    <tr><td>코누르</td><td>가족사업</td><td class="골드">금화 +1</td><td>이벤트 없음</td></tr>
+    <tr><td>이나르</td><td>서점 영업</td><td class="돌">서적 획득</td><td>이벤트 없음</td></tr>
+    <tr><td>아사르</td><td>서점 영업</td><td class="돌">예조(돌) 획득</td><td>이벤트 없음</td></tr>
+    <tr><td>자키</td><td>서점 영업</td><td>-</td><td>이벤트 없음</td></tr>
 
-<h2>📊 속성 누적 변화 추이</h2>
-<table>
-    <tr><th>일자</th><th>능력치</th><th>변화량</th><th>변화 원인</th></tr>
-    <tr><td>2일차</td><td>선명</td><td>+1</td><td>권력 게임 이벤트 선택</td></tr>
-    <tr><td>2일차</td><td>권세</td><td>-1</td><td>위 이벤트 결과</td></tr>
-    <tr><td>3일차</td><td>협명</td><td>+1</td><td>흉폭한 사자 습격 성공</td></tr>
-    <tr><td>3일차</td><td>권세</td><td>+1</td><td>권력 게임 결과</td></tr>
-    <tr><td>3일차</td><td>선명</td><td>-1</td><td>화재 이벤트 도둑질</td></tr>
-    <tr><td>3일차</td><td>악명</td><td>+1</td><td>위와 동일</td></tr>
-</table>
-
-<h2>🃏 카드 획득 및 사용 이력</h2>
-<table>
-    <tr><th>일자</th><th>카드명</th><th>행위</th><th>출처/사용처</th></tr>
-    <tr><td>1일차</td><td>살육(은)</td><td>획득</td><td>초기 보유</td></tr>
-    <tr><td>2일차</td><td>기회</td><td>획득</td><td>권력 게임</td></tr>
-    <tr><td>2일차</td><td>내막(브론즈)</td><td>획득</td><td>목욕탕 정보 수집</td></tr>
-    <tr><td>2일차</td><td>전술</td><td>획득</td><td>권력 게임</td></tr>
-    <tr><td>3일차</td><td>기회</td><td>사용</td><td>사자의 습격</td></tr>
-    <tr><td>3일차</td><td>약자가 강자를 이기는 법</td><td>획득</td><td>서점 영업</td></tr>
-    <tr><td>3일차</td><td>예조(돌)</td><td>획득</td><td>서점 영업</td></tr>
-</table>
-
-<h2>🎭 캐릭터 상태 변화 이력</h2>
-<table>
-    <tr><th>일자</th><th>캐릭터</th><th>변화 내용</th><th>원인</th></tr>
-    <tr><td>2일차</td><td>강또</td><td>내막 카드 획득</td><td>목욕탕 정보 수집</td></tr>
-    <tr><td>3일차</td><td>강또</td><td>부상</td><td>사자의 습격</td></tr>
-    <tr><td>3일차</td><td>볼란</td><td>부상</td><td>사자의 습격 보조</td></tr>
-    <tr><td>2일차</td><td>메기</td><td>전술 카드 획득</td><td>권력 게임</td></tr>
-    <tr><td>3일차</td><td>메기</td><td>권세 +1</td><td>권력 게임 성공</td></tr>
-    <tr><td>지속</td><td>코누르</td><td>금화 수익 누적</td><td>가족 사업</td></tr>
-    <tr><td>3일차</td><td>이나르</td><td>책 획득</td><td>서점 영업</td></tr>
-    <tr><td>3일차</td><td>아사르</td><td>예조 획득</td><td>서점 영업</td></tr>
+    <tr><td rowspan="6">5일차</td><td>메기</td><td>권력 게임</td><td>신비 카드 획득</td><td>이벤트 발생 (신들의 주목)</td></tr>
+    <tr><td>코누르</td><td>가족사업</td><td class="골드">금화 카드 획득</td><td>이벤트 발생 (내면의 고요함)</td></tr>
+    <tr><td>이나르</td><td>서점 영업</td><td class="돌">예조 카드 획득</td><td>이벤트 발생 (책 속 진실 탐구)</td></tr>
+    <tr><td>산바람의 부름</td><td>서점 앞 거지</td><td>카드 소모</td><td>이벤트 없음</td></tr>
+    <tr><td>강또</td><td>진료소</td><td>치료 완료</td><td>이벤트 없음</td></tr>
+    <tr><td>페리스 / 파디야</td><td>권력 게임 내 세력</td><td>지지자 수 증가</td><td>상호작용</td></tr>
 </table>
 
 </body>
